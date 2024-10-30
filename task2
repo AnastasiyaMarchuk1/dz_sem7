@@ -1,0 +1,41 @@
+// Напишите программу вычисления функции
+//Аккермана с помощью рекурсии. Даны два
+//неотрицательных числа m и n. 
+
+int Ack(int n,int m)
+{
+if(n==0) 
+{
+    return m+1;
+}
+else if (m==0)
+{
+    return Ack(n-1,1);
+
+}
+else
+{
+    return Ack(n-1,Ack(n,m-1));
+}
+}
+
+
+
+Console.Write("Введите неотрицательное число n: ");
+int first_num = Convert.ToInt32(Console.ReadLine());
+if (first_num < 0) 
+{
+    Console.WriteLine("Число должно быть неотрицательным");
+    Environment.Exit(0);
+}
+
+Console.Write("Введите неотрицательное число m: \n");
+int second_num = Convert.ToInt32(Console.ReadLine());
+if (second_num <= 0) 
+{
+    Console.WriteLine("Число должно быть неотрицательным");
+    Environment.Exit(0);
+}
+
+int result = Ack(first_num, second_num);
+Console.WriteLine(result);
