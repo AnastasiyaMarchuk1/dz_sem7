@@ -3,27 +3,27 @@
 //в промежутке от M до N. Использовать рекурсию, не
 //использовать циклы.
 
+
 void PrintNaturalNumbers(int m, int n)
 {
+    if (m == n)
+     {
+        Console.WriteLine(n);
+        return;
+     }
+       
     if (m < n)
     {
         Console.Write($"{m} ");
-        if (m == n)
-        {
-            return;
-        }
         PrintNaturalNumbers(m + 1, n);
     }
     else // if m>n 
     {
          Console.Write($"{m} ");
-        if (n == m)
-        {
-            return;
-        }
         PrintNaturalNumbers(m-1 , n);
     }
 }
+
 
 
 Console.WriteLine("Vvedite chislo m (ot): ");
